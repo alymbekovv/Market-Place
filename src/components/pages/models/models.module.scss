@@ -1,0 +1,110 @@
+.modelsContainer {
+  @media (max-width: 768px) {
+    padding-block: 30px;
+    padding-inline: 20px;
+  }
+}
+
+.modelsTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+
+  h1 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1.125rem);
+    color: #666;
+  }
+}
+
+.modelsContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding-block: 50px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-block: 30px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+
+  .sneakers {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 550px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @media (max-width: 1024px) {
+      height: 450px;
+    }
+
+    @media (max-width: 768px) {
+      height: 350px;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 15px;
+      position: absolute;
+      padding: 25px;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      transition: background 0.3s ease;
+
+      @media (max-width: 768px) {
+        padding: 15px;
+        gap: 10px;
+      }
+
+      h3 {
+        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.5;
+      }
+    }
+  }
+}

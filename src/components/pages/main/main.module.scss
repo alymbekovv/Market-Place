@@ -1,0 +1,93 @@
+.mainContainer {
+  padding: 80px 0;
+  background: #f8f9fa;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .mainContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 992px) {
+      flex-direction: column-reverse;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .mainText {
+      flex: 1;
+      max-width: 600px;
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #212529;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: #495057;
+        margin-bottom: 30px;
+      }
+
+      button {
+        background: #ff2c45;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #e01a32;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .mainImg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+        animation: float 3s ease-in-out infinite;
+        object-position: center;
+
+        @media (max-width: 992px) {
+          max-height: 400px;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding-inline: 20px;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

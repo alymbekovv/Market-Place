@@ -1,0 +1,138 @@
+.footer {
+  .texts {
+    padding-top: 80px;
+    display: flex;
+    gap: 20px;
+    @media (max-width: 720px) {
+      padding-top: 10px;
+    }
+    justify-content: space-between;
+    @media (max-width: 1074px) {
+      flex-direction: column;
+      padding-inline: 20px;
+    }
+    @media (max-width: 2000px) {
+      padding-inline: 20px;
+    }
+    .par {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      .text3big {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        @media (max-width: 680px) {
+          // flex-direction: column;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+        }
+        .h1text {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          @media (max-width: 459px) {
+            width: 360px;
+          }
+          @media (max-width: 412px) {
+            width: 277px;
+          }
+          .textp {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            p {
+              font-size: 16px;
+              font-weight: 400;
+              max-width: 300px;
+            }
+          }
+          h1 {
+            font-size: 23px;
+            width: 200px;
+          }
+        }
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (max-width: 1045px) {
+          display: none;
+        }
+        p {
+          max-width: 500px;
+          font-weight: 500;
+        }
+        h2 {
+          font-size: 23px;
+        }
+      }
+    }
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 20px;
+      @media (max-width: 2000px) {
+        padding-inline: 20px;
+      }
+      @media (max-width: 459px) {
+        width: 405px;
+        margin-inline: auto;
+      }
+      h1 {
+        font-size: 23px;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        max-width: 400px;
+      }
+      .number {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        @media (max-width: 412px) {
+          flex-direction: column;
+        }
+        .info {
+          display: flex;
+          align-items: center;
+          gap: 13px;
+          @media (max-width: 412px) {
+            flex-direction: column;
+          }
+          span {
+            font-weight: 400;
+          }
+        }
+      }
+      .time {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        .whenTime {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          @media (max-width: 1074px) {
+            display: none;
+          }
+          .timeText {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            @media (max-width: 1074px) {
+              display: none;
+            }
+            span {
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
