@@ -1,13 +1,12 @@
 import React from "react";
 import Home from "../components/pages/Home";
 import { Route, Routes } from "react-router-dom";
-import Main from "../components/pages/main/Main";
 import Shop from "../components/pages/shop/Shop";
 import ContactUs from "../components/pages/contactUs/ContactUs";
-import Product from "../components/pages/product/Product";
 import MyAccount from "../components/pages/myAccont/MyAccont";
 import Details from "../components/pages/details/Details";
 import Admin from "../components/pages/admin/Admin";
+import Cart from "../components/pages/cart/Cart";
 
 const MainRoutes = () => {
   const routes = [
@@ -20,12 +19,8 @@ const MainRoutes = () => {
       element: <Shop />,
     },
     {
-      link: "/contactUs",
-      element: <ContactUs />,
-    },
-    {
-      link: "/products",
-      element: <Product />,
+      link: "/cart",
+      element: <Cart />,
     },
     {
       link: "/myaccont",
@@ -38,6 +33,10 @@ const MainRoutes = () => {
     {
       link: "/admin",
       element: <Admin />,
+    },
+    {
+      link: "/product/:id",
+      element: <Details />,
     },
   ];
   return (

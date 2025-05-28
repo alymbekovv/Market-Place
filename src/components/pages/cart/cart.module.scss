@@ -1,0 +1,252 @@
+.cart {
+  width: 100%;
+  padding-bottom: 40px;
+
+  .cartBanner {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  /* Стили для таблицы (десктоп) */
+  .cartTable {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .desktopTable {
+      width: 100%;
+      border-collapse: collapse;
+      display: none; // Скрыта по умолчанию
+
+      @media (min-width: 768px) {
+        display: table; // Показываем на планшетах и десктопах
+      }
+
+      th,
+      td {
+        padding: 15px 10px;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      th {
+        background-color: #f5f5f5;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .imageProduct {
+        max-width: 80px;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      .quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        button {
+          width: 30px;
+          height: 30px;
+          border: 1px solid #ddd;
+          background: #f9f9f9;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background: #eee;
+          }
+        }
+      }
+
+      .deleteButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .deleteIcon {
+        color: #ff4444;
+        font-size: 20px;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #cc0000;
+        }
+      }
+    }
+
+    .mobileCart {
+      display: block;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      .mobileCartItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 15px;
+
+        @media (min-width: 480px) {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .imageProduct {
+          width: 100%;
+          max-width: 120px;
+          height: auto;
+          border-radius: 4px;
+          margin: 0 auto;
+
+          @media (min-width: 480px) {
+            margin: 0;
+            max-width: 80px;
+          }
+        }
+
+        .mobileCartDetails {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          @media (min-width: 480px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+          }
+
+          h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+          }
+
+          p {
+            margin: 0;
+            color: #666;
+          }
+
+          .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              width: 30px;
+              height: 30px;
+              border: 1px solid #ddd;
+              background: #f9f9f9;
+              border-radius: 4px;
+              font-size: 16px;
+              cursor: pointer;
+            }
+          }
+
+          .deleteButton {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            align-self: flex-start;
+
+            @media (min-width: 480px) {
+              align-self: center;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cartBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @media (min-width: 576px) {
+        flex-direction: row;
+      }
+    }
+
+    .cartSummary {
+      width: 100%;
+
+      @media (min-width: 992px) {
+        width: 350px;
+      }
+
+      .summaryBox {
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        .summaryRow {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          border-bottom: 1px solid #e0e0e0;
+          font-size: 16px;
+          font-weight: 500;
+
+          span:last-child {
+            font-weight: 600;
+          }
+        }
+
+        button {
+          width: 100%;
+          margin-top: 20px;
+          padding: 12px;
+          background: rgba(242, 39, 53, 1);
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s;
+
+          &:hover {
+            background: #3e8e41;
+          }
+        }
+      }
+    }
+  }
+}

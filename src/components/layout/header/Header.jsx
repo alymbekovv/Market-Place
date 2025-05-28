@@ -34,7 +34,7 @@ const Header = () => {
             <h2 style={{ color: "Red" }}>BEST SHOP</h2>
           </div>
           <div className={scss.shop}>
-            <Link to="/details">
+            <Link>
               <img src={search} alt="" />
             </Link>
             <Link to="/myaccont">
@@ -45,7 +45,7 @@ const Header = () => {
                 style={{ fontSize: "25px", color: "000" }}
               />
             </Link>
-            <Link to="/basket">
+            <Link to="/cart">
               <img src={shop} alt="" />
             </Link>
           </div>
@@ -58,14 +58,8 @@ const Header = () => {
             <Link to="/shop">
               <p>Shop</p>
             </Link>
-            <Link to="/products">
-              <p>Products</p>
-            </Link>
             <Link to="/aboutUs">
               <p>About Us</p>
-            </Link>
-            <Link to="/contactUs">
-              <p>Contact Us</p>
             </Link>
           </nav>
         </div>

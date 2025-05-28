@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import scss from "./Shop.module.scss";
 import { CiSearch } from "react-icons/ci";
-import shoes1 from "../../../assets/new3.svg";
 import barImg1 from "../../../assets/sideBarimg.png";
 import barImg2 from "../../../assets/barimg2.png";
 import barImg3 from "../../../assets/barimg3.png";
@@ -12,10 +11,18 @@ import barImg7 from "../../../assets/barimg7.png";
 import barImg8 from "../../../assets/barimg8.png";
 import barImg9 from "../../../assets/barimg9.png";
 import barImg10 from "../../../assets/barimg10.png";
-
 import rating from "../../../assets/rationg.svg";
+import { useProduct } from "../../../context/ProductContext";
+import { MdDeleteOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
+  const { getProduct, deleteProduct, handlePageChange } = useProduct();
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
   return (
     <div className={scss.shopContainer}>
       <div className="container">
@@ -31,105 +38,27 @@ const Shop = () => {
         </div>
         <div className={scss.shopContent}>
           <div className={scss.list}>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
+            {handlePageChange().map((item, index) => (
+              <div key={index} className={scss.card}>
+                <div className={scss.imageWrapper}>
+                  <span className={scss.saleBadge}>SALE</span>
+                  <MdDeleteOutline
+                    onClick={() => deleteProduct(item._id)}
+                    className={scss.deleteIcon}
+                  />
+                  <Link to={`/product/:${item._id}`}>
+                    <img
+                      src={item.image}
+                      alt="Продукт"
+                      className={scss.productImage}
+                    />
+                  </Link>
+                </div>
+                <h3 className={scss.productTitle}>{item.title}</h3>
+                <p className={scss.productPrice}>${item.price}</p>
+                <button className={scss.viewButton}>Add To Cart</button>
               </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
-            <div className={scss.card}>
-              <div className={scss.imageWrapper}>
-                <span className={scss.saleBadge}>SALE</span>
-                <img src={shoes1} alt="Продукт" className={scss.productImage} />
-              </div>
-              <h3 className={scss.productTitle}>
-                Vel vestibulum elit tuvel euqen.
-              </h3>
-              <p className={scss.productPrice}>$15</p>
-              <button className={scss.viewButton}>Add To Cart</button>
-            </div>
+            ))}
           </div>
 
           <div className={scss.sideBar}>
